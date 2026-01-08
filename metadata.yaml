@@ -1,6 +1,6 @@
 name: astrbot_plugin_newsforme
 display_name: 高级关键词监听插件
-desc: 一个关键词监听插件 当特定关键词被触发时 将报告发送给管理员 支持详细的监听配置 并具备统计分析的能力 支持多关键词 支持统计 支持自动回复 支持黑/白名单 等
+desc: 一个关键词监听插件 当特定关键词被触发时 将报告发送给管理员 支持详细的监听配置 并具备统计分析的能力 支持多关键词 支持统计 支持自动回复 支持黑/白名单 等丰富的配置
 version: v0.1.0
 author: CNKD-Yichex
 repo: https://github.com/Yichex/astrbot_plugin_newsforme
