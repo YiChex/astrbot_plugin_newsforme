@@ -1108,8 +1108,8 @@ class KeywordMonitorPlugin(Star):
             try:
                 shutdown_message = (
                     "【插件状态变更】\n"
-                    f"关键词监听插件已卸载\n"
-                    f"卸载时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
+                    f"新的配置已生效\n"
+                    f"时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
                     f"累计触发: {len(self.trigger_records)} 次"
                 )
                 
