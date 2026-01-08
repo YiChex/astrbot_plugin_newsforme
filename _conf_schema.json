@@ -1,0 +1,128 @@
+{
+  "admin_qq": {
+    "description": "管理员QQ号",
+    "type": "string",
+    "hint": "接收关键词监听报告的管理员QQ号",
+    "default": "475407353",
+    "obvious_hint": true
+  },
+  "keywords": {
+    "description": "监听的关键词列表",
+    "type": "list",
+    "hint": "需要监听的关键词列表，支持多个关键词，每个关键词单独一行",
+    "default": ["服务器", "CNKD", "薯条"]
+  },
+  "exclude_words": {
+    "description": "排除关键词列表",
+    "type": "list",
+    "hint": "即使包含监听关键词，但如果同时包含这些排除词则不会触发",
+    "default": ["游戏服务器", "测试服务器", "我的服务器"]
+  },
+  "cooldown_time": {
+    "description": "冷却时间(秒)",
+    "type": "int",
+    "hint": "同一用户连续触发关键词的最小间隔时间，防止刷屏",
+    "default": 60,
+    "slider": {"min": 5, "max": 3600, "step": 5}
+  },
+  "max_message_length": {
+    "description": "最大消息长度",
+    "type": "int",
+    "hint": "处理消息的最大长度，超过此长度的消息会被截断",
+    "default": 500,
+    "slider": {"min": 100, "max": 2000, "step": 50}
+  },
+  "enable_group_monitor": {
+    "description": "启用群聊监听",
+    "type": "bool",
+    "hint": "是否监听群聊消息中的关键词",
+    "default": true
+  },
+  "enable_private_monitor": {
+    "description": "启用私聊监听",
+    "type": "bool",
+    "hint": "是否监听私聊消息中的关键词",
+    "default": true
+  },
+  "enable_notification": {
+    "description": "启用通知",
+    "type": "bool",
+    "hint": "是否向管理员发送通知",
+    "default": true
+  },
+  "notification_format": {
+    "description": "通知格式模板",
+    "type": "text",
+    "hint": "通知消息的格式模板，可用变量：{keyword}、{time}、{user}、{user_id}、{source}、{group_id}、{message}、{message_id}",
+    "default": "【关键词监听报告】\n关键词: {keyword}\n触发时间: {time}\n触发用户: {user} (ID: {user_id})\n消息来源: {source}{group_info}\n消息内容: {message}\n消息ID: {message_id}\n\n--- 关键词监听插件 ---"
+  },
+  "enable_statistics": {
+    "description": "启用统计功能",
+    "type": "bool",
+    "hint": "是否记录关键词触发统计",
+    "default": true
+  },
+  "statistics_retention_days": {
+    "description": "统计保留天数",
+    "type": "int",
+    "hint": "统计数据的保留天数，超过此天数的数据会被自动清理",
+    "default": 30,
+    "slider": {"min": 1, "max": 365, "step": 1}
+  },
+  "enable_auto_reply": {
+    "description": "启用自动回复",
+    "type": "bool",
+    "hint": "是否自动回复触发关键词的用户",
+    "default": false
+  },
+  "auto_reply_message": {
+    "description": "自动回复消息",
+    "type": "text",
+    "hint": "触发关键词后自动回复用户的消息，可用变量：{user}、{keyword}",
+    "default": "您提到了{keyword}，已通知管理员处理。"
+  },
+  "whitelist_groups": {
+    "description": "白名单群组列表",
+    "type": "list",
+    "hint": "仅在这些群组中监听关键词，留空则监听所有群组",
+    "default": []
+  },
+  "blacklist_groups": {
+    "description": "黑名单群组列表",
+    "type": "list",
+    "hint": "不在这些群组中监听关键词",
+    "default": []
+  },
+  "whitelist_users": {
+    "description": "白名单用户列表",
+    "type": "list",
+    "hint": "仅在这些用户触发关键词时通知管理员",
+    "default": []
+  },
+  "blacklist_users": {
+    "description": "黑名单用户列表",
+    "type": "list",
+    "hint": "这些用户触发关键词时不通知管理员",
+    "default": []
+  },
+  "enable_debug_log": {
+    "description": "启用调试日志",
+    "type": "bool",
+    "hint": "是否记录详细的调试日志",
+    "default": false
+  },
+  "notification_retry_times": {
+    "description": "通知重试次数",
+    "type": "int",
+    "hint": "发送通知失败时的重试次数",
+    "default": 3,
+    "slider": {"min": 0, "max": 10, "step": 1}
+  },
+  "notification_retry_delay": {
+    "description": "重试延迟(秒)",
+    "type": "int",
+    "hint": "每次重试之间的延迟时间",
+    "default": 2,
+    "slider": {"min": 1, "max": 60, "step": 1}
+  }
+}
